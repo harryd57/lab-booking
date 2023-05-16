@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Make reservation
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top: 20px; margin-left: 20px;">
+    <div class="col-8">
+        <h2>Reservations</h2>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <!-- Your Columns HERE -->
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Reserved Date</th>
+                    <th scope="col">Status</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows reversed %}
+                <!-- Your rows inside the table HERE: -->
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.first_name }}</td>
+                    <td>{{ row.last_name }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.reserved_date }}</td>
+                    <td class="bg-success"> Booked</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
